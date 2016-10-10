@@ -1,0 +1,5 @@
+Version 2.1 (05/01/11)
+Corrected bug: thresholds not properly painted when MinimumValue != 0 (thanks to GuyCoast for segnalation)
+
+Version 2.0 (released on 02/01/11)
+First version
