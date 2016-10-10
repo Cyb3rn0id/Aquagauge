@@ -1,0 +1,38 @@
+This is a list of modifications by Bernardo Giovanni (http://www.settorezero.com)
+to original AquaGauge Control developed by Ambalavanar Thirugnanam (ambalavanar.thiru@gmail.com)
+
+* PROPERTIES ADDED
+- added property RimColor (used to set the color of external arc near the calibration marks)
+- added property RimAlpha (used to set opacity of external arc)
+- added property PointerColor (used to set the color of pointer)
+- added property DialBorderColor (used to set the color of gauge border)
+- added property DialTextFont (used to set the font of the text under the pointer)
+- added property DialTextColor (used to set the color of the text under the pointer)
+- added property DialTextVOffset (used to place dial text in vertical)
+- added property DigitalValueColor (used to set the color of digital value)
+- added property DigitalValueBackColor (used to set the background color of digital value)
+- added property DigitalValueBackAlpha (used to set the opacity of background color of digital value)
+- added property DigitalValueVisible (used to show/hide the digital value)
+- added property DigitalValue (value to be displayed on digital display if ValueToDigital=false, not used if valuetodigital=true)
+- added property DigitalValueDecimalPlaces (decimal placese for digital value if valuetodigital=false)
+- added property ValueToDigital (if true, digital display and pointer will show the same value, if false digital display will show his own value as defined by DigitalValue property)
+- added property DecimalPlaces (used to set the number of decimal places of digital value and values on the scale)
+- added properties Threshold1Start, Threshold1Stop, Threshold2Start, Threshold2Stop, Threshold1Color, Threshold2Color
+- added property DialAlpha (used to set dial opacity) - now scale text is more crisp
+- added property ScaleFontSizeDivider (used to set size of scale text, from 15 to 25)
+- added property ScaleColor (used to set the color of calibration marks and calibration strings)
+
+* PROPERTIES REMOVED
+- removed properties ReccomendedValue and ThresholdPercent, replaced by Threshold1/Threshold2 properties
+
+* MODIFICATIONS
+- initialized maxvalue to 100 in order to make pointer appear in design mode
+- corrected bug (resizing control on form designer the entire control wasn't resized but pointer only): edited AquaGauge_Resize method
+- corrected bug (digital value is not updated) : digital value now is updated in OnPaint method
+- corrected bug in DisplayNumber method (systems using comma as decimal separator doesn't display decimal values)
+- thresholds are painted only if required
+- dialtext is painted only if required (dialtext != "")
+- dialtext centered and multiline as subjested by user mythzxp on codeproject
+- glossiness now expressed as 0-255
+- changed default colors
+- added offset (auto-calculated) to place numbers on scale (without this mod values with decimals overlaps mark signs)
